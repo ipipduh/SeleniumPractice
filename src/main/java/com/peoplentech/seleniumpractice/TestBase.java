@@ -34,7 +34,8 @@ public class TestBase {
     }
 
     public static void closeDriver() {
-        driver.close();
+//        driver.close();
+        driver.quit();
     }
 
 
