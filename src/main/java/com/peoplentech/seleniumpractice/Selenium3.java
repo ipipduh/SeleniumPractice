@@ -23,7 +23,7 @@ public class Selenium3 extends TestBase {
 
 //        @Test
 //    public static void validateUserCanTypeOnSearchBar() {
-//        setupDriver();
+//        setupDriver("Chrome");
 //        navigateToURL("https://www.ebay.com");
 //
 //        // by id
@@ -37,7 +37,7 @@ public class Selenium3 extends TestBase {
 //
 //    @Test
 //    public static void validateUserCanTypeOnSearchBarAndClickSearchButton() {
-//        setupDriver();
+//        setupDriver("Chrome");
 //        navigateToURL("https://www.ebay.com");
 //
 //        driver.findElement(By.id("gh-ac")).sendKeys("Java Books");
@@ -58,7 +58,7 @@ public class Selenium3 extends TestBase {
 //
 //    @Test
 //    public static void validateProductDropDown() {
-//        setupDriver();
+//        setupDriver("Chrome");
 //        navigateToURL("https://www.ebay.com");
 //
 //        // print the data
@@ -76,7 +76,7 @@ public class Selenium3 extends TestBase {
 //
 //    @Test
 //    public static void validateSearchClick(){
-//        setupDriver();
+//        setupDriver("Chrome");
 //        navigateToURL(("https://www.ebay.com"));
 //
 //        driver.findElement(By.id("//input[@id='gh-btn']")).click();
@@ -88,7 +88,7 @@ public class Selenium3 extends TestBase {
 
 //    @Test
 //    public static void validateUserCanTypeOnSearchBarAndChooseFromDropDownAndSearch(){
-//        setupDriver();
+//        setupDriver("Chrome");
 //        navigateToURL("https://www.ebay.com");
 //        driver.findElement(By.xpath("//*[@id='gh-ac']")).sendKeys("Java Books");
 //
@@ -102,30 +102,30 @@ public class Selenium3 extends TestBase {
 //        closeDriver();
 //    }
 
-        @Test
-        public static void SeleniumMethods() {
-            setupDriver();
-            navigateToURL("https://www.ebay.com");
-            WebElement clickElement = driver.findElement(By.xpath("//input[@id='gh-btn']"));
-            clickElement.click();
+            @Test
+            public static void SeleniumMethods() {
+                setupDriver("Chrome");
+                navigateToURL("https://www.ebay.com");
+                WebElement clickElement = driver.findElement(By.xpath("//input[@id='gh-btn']"));
+                clickElement.click();
 
-            sleepFor(5);
-            driver.findElement(By.xpath("//h2[text()='eBay Motors']")).click();
+                sleepFor(5);
+                driver.findElement(By.xpath("//h2[text()='eBay Motors']")).click();
 
-            sleepFor(5);
-            String currentUrl = driver.getCurrentUrl();
+                sleepFor(5);
+                String currentUrl = driver.getCurrentUrl();
 
-            System.out.println(currentUrl);
+                System.out.println(currentUrl);
 
-          //  Assert.assertTrue(currentUrl.contains("Auto-Parts-and-Vehicles"));
+                //  Assert.assertTrue(currentUrl.contains("Auto-Parts-and-Vehicles"));
 
-            // first one is actual, second one is expected
-         //   Assert.assertEquals(currentUrl, "https://www.ebay.com/b/Auto-Parts-and-Vehicles/6000/bn_1865334");
+                // first one is actual, second one is expected
+                //   Assert.assertEquals(currentUrl, "https://www.ebay.com/b/Auto-Parts-and-Vehicles/6000/bn_1865334");
 
-            sleepFor(2);
-            closeDriver();
+                sleepFor(2);
+                closeDriver();
+
+            }
 
         }
-
-    }
 
