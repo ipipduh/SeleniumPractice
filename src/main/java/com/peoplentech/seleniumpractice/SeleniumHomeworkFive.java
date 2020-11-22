@@ -14,9 +14,35 @@ public class SeleniumHomeworkFive extends TestBase {
     // iframe, canvas,
 
 
-    // DRAG AND DROP
 
-    // POP-UP
+    @Test
+    public void checkiFrameAccessAndSliderFunction() {
+    setupDriver("Chrome");
+    navigateToURL("https://jqueryui.com/slider/");
+    driver.manage().window().maximize();
+    sleepFor(2);
+
+    // before I can use the slider I have to access the iframe
+        driver.switchTo().frame(0);
+        WebElement mainslider = driver.findElement(By.id("slider"));
+
+        // I have to get the width of the slider in order to properly execute the slider function
+        int width = mainslider.getSize().width / 2;
+        WebElement slider = driver.findElement(By.xpath("//*[@id=\"slider\"]/span"));
+
+//
+        sleepFor(4);
+
+        // action using drag and drop to move the slider from the left to the center
+        // you can create Action without reference
+        new Actions(driver).dragAndDropBy(slider, width, 0).perform();
+        // can also try a number, such as 300, if you are curious as to where the scrolling will stop
+
+        sleepFor(2);
+        closeDriver();
+    }
+
+
     @Test
     public void validatePopup() {
         setupDriver("Chrome");

@@ -40,7 +40,7 @@ public class SeleniumHomeworkWeddingWire extends TestBase {
     }
 
     @Test
-    public static void validateSearchBar(){
+    public void validateSearchBar(){
 
         // encountered an issue where the search bar was not clearing as I attempted to send keywords through
         // used .clear (below) - you can see the difference with and without it
@@ -63,7 +63,7 @@ public class SeleniumHomeworkWeddingWire extends TestBase {
     }
 
     @Test
-            public static void validateAccountCreation() {
+            public void validateAccountCreation() {
 
         //go to join page to sign up
         driver.findElement(By.xpath("//a[@class='header-join-link app-ua-track-event']")).click();
